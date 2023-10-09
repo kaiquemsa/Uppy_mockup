@@ -1,10 +1,14 @@
-import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/header";
+import { Section } from "../../components/section";
+import { Footer } from "../../components/footer";
 
-const Home: React.FC = () => {
-  const navigation = useNavigate();
+function Home()  {
 
   return (
     <>
+      <Header />
+      <Section />
+      <Footer />
     </>
   );
 };
