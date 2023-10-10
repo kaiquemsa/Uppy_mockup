@@ -1,7 +1,7 @@
-import { Container, Detach, CarouselStyle, DetachStyle, WhoAreSection, Subscription, Lettering, Division, TextFieldStyle, Boxes, ListProducts } from './styles';
+import { Container as ContainerStyle, Detach, CarouselStyle, DetachStyle, WhoAreSection, Subscription, Lettering, Division, TextFieldStyle, Boxes, ListProducts } from './styles';
 import Computer from '../../assets/Frame.png'
 import Carousel from 'react-material-ui-carousel';
-import { Button, Paper } from '@material-ui/core';
+import { Button, Container, Paper } from '@material-ui/core';
 import Star from '@mui/icons-material/StarBorderRounded';
 import Banner from '../../assets/Frame_5.png'
 import Home from '@mui/icons-material/HomeOutlined';
@@ -33,7 +33,8 @@ function Section() {
     ]
 
     return (
-        <Container>
+        <Container maxWidth="lg" className='ContainerWrap'>
+        <ContainerStyle>
             <CarouselStyle>
                 <Carousel>
                     {
@@ -103,7 +104,7 @@ function Section() {
                         <h1>Inscreva-se e acompanhe</h1>
                         <h2>Nossa newsletter sempre cheia de novidades.</h2>
                     </Lettering>
-                    <Boxes>
+                    <Boxes className='Boxes'>
                         <TextFieldStyle
                         id="search"
                         label="Nome"
@@ -120,6 +121,7 @@ function Section() {
                     </Boxes>
                 </Division>
             </Subscription>
+        </ContainerStyle>
         </Container>
     );
 };

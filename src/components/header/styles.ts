@@ -5,9 +5,36 @@ import TextField from '@mui/material/TextField';
 import { colors } from "../../global/colors";
 
 export const AppBarStyle = styled(AppBar) `
+    z-index: 10;
     background-color: ${colors.uppyRose} !important;
     height: 120px;
     border-radius: 0 0 16px 16px;
+    transition: all 0.5s ease-out !important;
+
+    &.activyColor {
+        height: 68px;
+        background-color: ${colors.uppyRoseSecond} !important;
+        opacity: 0.7;
+        box-shadow: 0;
+        img{
+            width: 77px;
+            height: 34px;
+        }
+
+        .TextField {
+          display: none;
+        }
+
+        .LinkStyle {
+          margin-top: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+      height: 40px !important;
+      width: fit-content !important;
+      left: 0 !important;
+    }
 `;
 
 export const LinkStyle = styled.div `

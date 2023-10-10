@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# <div align="center">![Logo](/src/assets/uppy_logo.png) </div> <div align="center">Uppy Website Project</div>
+<div align="center">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> 
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> 
+<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" /> 
+<img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" /> 
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💻 Prerequisites
 
-## Available Scripts
+Before you begin, ensure you have met the following requirements:
 
-In the project directory, you can run:
+* You have installed the latest version of `<ReactJs / Styled-Components / MaterialUI>`
+* You have a `<Windows / Linux / Mac>` machine. 
+## 🚀 Framework:
+<p>
+    <a href="https://reactjs.org/">🔗 ReactJS</a>
+</p>
+
+## 🚀 Libraries used for the construction of the project:</p>
+<ul>
+    <li>Material UI</li>
+    <li>Styled Components</li>
+</ul>
+
+## Scripts at Your Disposal
+
+Within the project directory, you have the ability to execute:
+
+Before utilizing this project, it's necessary to install dependent libraries by running `npm install`. In case of conflicts, it may be necessary to execute `npm install --legacy-peer-deps`.
+
+## 🚀 Installation Uppy
+
+To install the uppy_mockup, follow the following steps:
+
+Linux e macOS:
+```
+npm install or npm install --legacy-peer-deps
+```
+
+Windows:
+```
+npm install or npm install --legacy-peer-deps
+```
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This command initiates the application in development mode.\
+Navigate to [http://localhost:3000](http://localhost:3000) to view it within your browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Any modifications will trigger a page refresh.\
+Lint errors will be visible within the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This command launches the test runner in an interactive watch mode.\
+For additional information, refer to the section about [executing tests](https://facebook.github.io/create-react-app/docs/running-tests).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This command compiles the application for production into the `build` folder.\
+It accurately bundles React in production mode and optimizes the build for optimal performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The build is minified and filenames include hashes for cache management.\
+Your application is now ready for deployment!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Refer to the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for additional information.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Caution: this is an irreversible operation. Once you `eject`, there's no turning back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you find yourself dissatisfied with the build tool and configuration choices, you can `eject` at any time. This command will eliminate the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Instead, it will copy all configuration files and transitive dependencies (webpack, Babel, ESLint, etc.) directly into your project, providing you with full control. All commands except `eject` will continue to function, but they will point to the copied scripts allowing you to modify them. From this point forward, you're on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You're not obligated to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Further Learning
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more by visiting the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn more about React, check out the [React documentation](https://reactjs.org/).
+

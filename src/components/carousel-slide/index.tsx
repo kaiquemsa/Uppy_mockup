@@ -11,8 +11,11 @@ import ProductCard from '../product-card';
 import ProductContext from '../../hooks/ProductContext';
 import { LinkStyle } from './style';
 import { colors } from '../../global/colors';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 function CourselPersonalized() {
+    const matches = useMediaQuery('(max-width:600px)');
+
     const context = useContext(ProductContext);
 
     if (!context) {
@@ -26,12 +29,12 @@ function CourselPersonalized() {
       };
 
     const products = [
-        { image: ProductDetach1, productName: 'Notebook Gamer', price: 'R$59,00', width: '368px',  },
-        { image: ProductDetach2, productName: 'Computador montado', price: 'R$69,00', width: '368px',  },
-        { image: ProductDetach3, productName: 'Xbox Series X', price: 'R$79,00', width: '368px',  },
-        { image: ProductDetach1, productName: 'Notebook Gamer', price: 'R$79,00', width: '368px',  },
-        { image: ProductDetach2, productName: 'Computador montad', price: 'R$79,00', width: '368px',  },
-        { image: ProductDetach3, productName: 'Xbox Series X', price: 'R$79,00', width: '368px',  },
+        { image: ProductDetach1, productName: 'Notebook Gamer', price: 'R$59,00', width: matches ? '320px' : '368px'  },
+        { image: ProductDetach2, productName: 'Computador montado', price: 'R$69,00', width: matches ? '320px' : '368px'  },
+        { image: ProductDetach3, productName: 'Xbox Series X', price: 'R$79,00', width: matches ? '320px' : '368px'  },
+        { image: ProductDetach1, productName: 'Notebook Gamer', price: 'R$79,00', width: matches ? '320px' : '368px'  },
+        { image: ProductDetach2, productName: 'Computador montado', price: 'R$79,00', width: matches ? '320px' : '368px'  },
+        { image: ProductDetach3, productName: 'Xbox Series X', price: 'R$79,00', width: matches ? '320px' : '368px'  },
     ];
 
     const responsive = {

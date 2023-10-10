@@ -27,6 +27,9 @@ export const Container = styled.div `
         font-size: 18.75px;
     }
 
+    @media (max-width:600px) {
+        max-width: 600px;
+    }
 `;
 
 export const FirstSection = styled.div `
@@ -34,6 +37,17 @@ export const FirstSection = styled.div `
     margin-bottom: 64px;
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+
+        .MuiDialog-container { 
+            @media(max-width:600) {
+                width: 400px !important; 
+                height: 500px !important;
+            }
+        }
+    }
 `;
 
 export const SectionBuy = styled.div `
@@ -50,6 +64,10 @@ export const MiddlePrice = styled.div `
     align-items: center;
     gap: 128px;
     margin-bottom: 48px;
+
+    @media (max-width:600px) {
+        gap: 0
+    }
 `;
 
 export const IconButtonStyled = styled(IconButton) `
@@ -88,5 +106,13 @@ export const Datasheet = styled.div `
     span {
         width: 312px;
         display: inline-flex;
+    }
+
+    @media (max-width:600px) {
+        flex-wrap: wrap;
+
+        img {
+            width: 366px;
+        }
     }
 `;

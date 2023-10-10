@@ -11,7 +11,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { colors } from '../../global/colors';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Paper } from '@material-ui/core';
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 type ImageCarouselProps = {
   image: any;
@@ -24,6 +24,8 @@ interface ItemProps {
 
 
 const CarouselAmpliation: React.FC<ImageCarouselProps> = ({ image }) => {
+  const matches = useMediaQuery('(max-width:600px)');
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
   
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -41,8 +43,8 @@ const CarouselAmpliation: React.FC<ImageCarouselProps> = ({ image }) => {
   function Item({ img, alt }: ItemProps) {
     return (
       <Paper>
-        <img src={img} alt={alt} style={{width:569, height:569, borderRadius: 16}}/>
-        <IconButton onClick={openModal} style={{ position: "absolute", bottom: 10, right: 10, color: `${colors.uppyRose}`, zIndex: 5 }}>
+        <img src={img} alt={alt} style={{width:matches ? 320 : 569, height:matches ? 320 : 569, borderRadius: 16}}/>
+        <IconButton onClick={openModal} style={{ position: "absolute", bottom: matches ? 256 : 10, right: matches ? 252 : 10, color: `${colors.uppyRose}`, zIndex: 5 }}>
               <CropFreeIcon />
         </IconButton>
       </Paper>
@@ -50,7 +52,7 @@ const CarouselAmpliation: React.FC<ImageCarouselProps> = ({ image }) => {
   }
 
   return (
-    <div>
+    <div style={{width: matches ? 320 : 'auto', height: matches ? 320 : 'auto'}}>
       <CarouselStyle 
       autoPlay={false}
       navButtonsProps={{
@@ -68,14 +70,15 @@ const CarouselAmpliation: React.FC<ImageCarouselProps> = ({ image }) => {
       </CarouselStyle>
 
       <Dialog
+        className='Dialog'
         open={modalIsOpen}
         onClose={closeModal}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         PaperProps={{
           style: {
-            width: '872px',
-            height: '720px',
+            width: matches ? '320' : '872px',
+            height: matches ? '320' : '720px',
             maxWidth: '900px',
             alignItems: 'center',
             borderRadius: '24px',
@@ -83,12 +86,12 @@ const CarouselAmpliation: React.FC<ImageCarouselProps> = ({ image }) => {
         }}
         BackdropProps={{ style: { backgroundColor: 'rgba(0, 0, 0, 0.74)' } }}
       >
-        <DialogContent>
-          <IconButton onClick={closeModal} style={{position:"absolute", bottom:32, right:64, color:`${colors.uppyRose}`}}>
+        <DialogContent style={{width: matches ? 280 : 'auto', height: matches ? 350 : 'auto'}} >
+          <IconButton onClick={closeModal} style={{position:"absolute", bottom:matches ? 15 : 32, right:matches ? 15 : 64, color:`${colors.uppyRose}`}}>
             <ZoomInMapIcon />
           </IconButton>
           <div style={{display:"flex", gap:24}}>
-            <div style={{display: 'flex', flexDirection: 'column', gap:16}}>
+            <div style={{display:matches ? "none" : "flex", flexDirection: 'column', gap:16}}>
               {images.map((image:any, index:any) => (
                 <img 
                 key={index}
@@ -106,7 +109,7 @@ const CarouselAmpliation: React.FC<ImageCarouselProps> = ({ image }) => {
                 />
                 ))}
             </div>
-            <img src={images[selectedIndex]} alt={`Product ${selectedIndex}`} style={{width:608, height:608, borderRadius:20, transition:'all .3s ease-in-out'}}/>
+            <img src={images[selectedIndex]} alt={`Product ${selectedIndex}`} style={{width:matches ? 300 : 608, height:matches ? 300 : 608, borderRadius:20, transition:'all .3s ease-in-out'}}/>
           </div>
         </DialogContent>
       </Dialog>

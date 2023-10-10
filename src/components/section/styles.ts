@@ -12,13 +12,21 @@ export const Container = styled.div `
 
 
 export const CarouselStyle = styled.div `
-    margin-top: 16px;
+    margin-top: 140px;
 
     .MuiPaper-elevation1 {
         box-shadow: none;
     }
     .css-8ucetn-MuiButtonBase-root-MuiIconButton-root {
         color: ${colors.uppyRose};
+    }
+
+    @media(max-width:600px) {
+        img {
+            margin-top: 0 !important;
+            width: 320px;
+            height: 275px !important;
+        }
     }
 `;
 
@@ -63,6 +71,10 @@ export const ListProducts = styled.div `
         color: ${colors.uppyRose};
     }
 
+    @media(max-width: 600px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `;
 
 export const WhoAreSection = styled.div `
@@ -79,6 +91,14 @@ export const WhoAreSection = styled.div `
     img {
         border-radius: 16px;
     }
+
+    @media(max-width:600px) {
+        flex-wrap: wrap;
+
+        img {
+            width: 326.4px;
+        }
+    }
 `;
 
 export const Subscription = styled.div`
@@ -88,6 +108,19 @@ export const Subscription = styled.div`
     background-color: ${colors.uppyBlue};
     border-radius: 16px;
     margin-bottom: 64px;
+
+    @media(max-width:600px) {
+        h1 {
+            font-size: 24px !important;
+        }
+        h2 {
+            font-size: 20px !important;
+        }
+
+        .Boxes {
+            display: none;
+        }
+    }
 `;
 
 export const Lettering = styled.div `
@@ -150,5 +183,14 @@ export const Boxes = styled.div `
 
     button:hover {
         background-color: ${colors.uppyRose};
+    }
+`;
+
+export const ContainerWrap = styled.div `
+    .MuiDialog-container { 
+        @media(max-width:600) {
+            width: 400px !important; 
+            height: 500px !important;
+        }
     }
 `;

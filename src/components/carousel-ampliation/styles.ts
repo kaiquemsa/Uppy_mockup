@@ -52,11 +52,29 @@ export const CarouselStyle = styled(Carousel) `
         height: 10%;
         top: 281px;
         right: -48px;
+
+        @media (max-width:600px) {
+            top: 162px;
+            right: 196px;
+        }
     }
 
     .css-hn784z {
         height: 10%;
         top: 281px;
         left: -48px;
+
+        @media (max-width:600px) {
+            top: 162px;
+        }
+    }
+`;
+
+export const Dialog = styled.div `
+    .MuiDialog-container { 
+        @media(max-width:600) {
+            width: 400px !important; 
+            height: 500px !important;
+        }
     }
 `;

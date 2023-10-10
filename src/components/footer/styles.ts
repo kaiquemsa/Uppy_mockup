@@ -25,6 +25,13 @@ export const InfoClient = styled.div `
     hr {
         width: 91.63%;
     }
+
+    @media (max-width:600px) {
+
+        hr {
+            display: none;
+        }
+    }
 `;
 
 export const Division = styled.div `
@@ -45,6 +52,17 @@ export const FirstSection = styled.div `
         font-size: 29.3px;
         font-weight: 700;
     }
+
+    @media (max-width:600px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        button {
+            width: 40px !important;
+            height: 40px !important;
+        }
+        
+    }
 `;
 
 export const SecondSection = styled.div `
@@ -61,6 +79,12 @@ export const SecondSection = styled.div `
         font-size: 18.75px;
         font-weight: 500;
     }
+
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
 `;
 
 export const ThirdSection = styled.div `
@@ -72,6 +96,10 @@ export const LinkSection = styled.div `
     display: flex;
     gap: 16px;
     font-size: 18.75px;
+
+    @media (max-width:600px){
+        display: none;
+    }
 `;
 
 export const BottomFooter = styled.div `
@@ -92,6 +120,17 @@ export const BottomFooter = styled.div `
     h2 {
         font-size: 18.75px;
         font-weight: 500;
+    }
+
+    @media(max-width:600px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 32px;
+        margin-bottom: 32px;
+
+        div {
+            padding: 0;
+        }
     }
 `;
 

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Container from "@material-ui/core/Container";
 import { useParams } from 'react-router-dom';
 import { Footer } from "../../components/footer"
 import { Header } from "../../components/header"
-import { Container, IconButtonStyled, Datasheet, MiddlePrice, SectionBuy, FirstSection } from "./styles"
+import { Container as ContainerStyle, IconButtonStyled, Datasheet, MiddlePrice, SectionBuy, FirstSection } from "./styles"
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Link } from 'react-router-dom';
 import DatasheetPhoto from '../../assets/datasheet.png';
@@ -15,8 +16,24 @@ import TextField from '@mui/material/TextField';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { colors } from '../../global/colors';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 function DetailsProduct() {
+    const matches = useMediaQuery('(max-width:600px)');
+
+    const [activyColor, setActivyColor] = useState(false);
+
+    useEffect(function () {
+      function posicionScroll() {
+        if (window.scrollY > 10) {
+          setActivyColor(true);
+        } else {
+          setActivyColor(false);
+        }
+      }
+      window.addEventListener("scroll", posicionScroll);
+    }, []);
+
     const { productName } = useParams();
 
     const context = useContext(ProductContext);
@@ -34,9 +51,10 @@ function DetailsProduct() {
 
     return (
         <>
-            <Header />
-            <Container>
-                <div style={{marginTop: 48}}>
+        <Container maxWidth="lg">
+            <Header action={activyColor}/>
+            <ContainerStyle>
+                <div style={{marginTop: matches ? 48 : 140}}>
                     <Link to={"/"}>
                        <IconButtonStyled color="inherit" aria-label="back button">
                           <ArrowBackIosIcon />
@@ -45,14 +63,14 @@ function DetailsProduct() {
                     </Link>
                 </div>
                 <FirstSection>
-                    <div style={{marginRight:82, marginLeft:32}}>
+                    <div style={{marginRight:matches ? 0 : 82, marginLeft:matches ? 20 : 32}}>
                         <CarouselAmpliation image={image}/>
                     </div>
                     <SectionBuy>
                         <h2>{productName}</h2>
                         <MiddlePrice>
                             <div>
-                                <h1>R$ {price}</h1>
+                                <h1>{price}</h1>
                                 <span>ou até 12x de 4,90 sem juros</span>
                             </div>
                             <div>
@@ -84,7 +102,7 @@ function DetailsProduct() {
                             </div>
                         </MiddlePrice>
                         <div style={{display:"flex", flexDirection:"column", gap:24}}>
-                            <Button variant="contained" style={{width:469, height:48,borderRadius:64,backgroundColor:`${colors.uppyRose}`}}>Adicionar ao carrinho</Button>
+                            <Button variant="contained" style={{width:matches ? 360 : 469, height:48,borderRadius:64,backgroundColor:`${colors.uppyRose}`}}>Adicionar ao carrinho</Button>
                             <Button style={{color: `${colors.uppyBlueSecond}`, gap:8}}>
                                 <ShareOutlinedIcon/>
                                 Compartilhar
@@ -113,8 +131,9 @@ function DetailsProduct() {
                         <span>At cras senectus ut sem enim nunc pellentesque vestibulum. Elit magna maecenas ac vitae massa arcu.</span>
                     </div>
                 </Datasheet>
-            </Container>
-            <Footer />
+            </ContainerStyle>
+        </Container>
+        <Footer />
         </>
     )
 }
